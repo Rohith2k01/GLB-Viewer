@@ -1,4 +1,3 @@
-// routes/modelRoutes.js
 const express = require('express');
 const multer = require('multer');
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
