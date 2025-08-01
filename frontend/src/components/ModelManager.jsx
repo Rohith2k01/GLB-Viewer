@@ -16,7 +16,8 @@ function ModelManager() {
     const [file, setFile] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/models').then(res => {
+        axios.get(axios.get('https://glb-viewer-mpv9.onrender.com/models')
+        ).then(res => {
             setModels(res.data);
         });
     }, []);
@@ -27,7 +28,7 @@ function ModelManager() {
         formData.append('model', file);
         formData.append('name', name);
 
-        const res = await axios.post('http://localhost:5000/upload', formData);
+        const res = await axios.post('https://glb-viewer-mpv9.onrender.com/upload', formData);
         setModels([...models, res.data.model]);
         setName('');
         setFile(null);
