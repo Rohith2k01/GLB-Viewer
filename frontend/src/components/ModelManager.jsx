@@ -16,8 +16,8 @@ function ModelManager() {
     const [file, setFile] = useState(null);
 
     useEffect(() => {
-        axios.get(axios.get('https://glb-viewer-mpv9.onrender.com/models')
-        ).then(res => {
+        axios.get('https://glb-viewer-mpv9.onrender.com/models')
+            .then(res => {
             setModels(res.data);
         });
     }, []);
